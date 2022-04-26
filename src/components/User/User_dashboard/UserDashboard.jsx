@@ -1,99 +1,78 @@
-
 import React from "react";
 import axios from "axios";
-// import "./UserDashboard.css";
-import {useDispatch,useSelector} from "react-redux"
+import "./UserDashboard.css";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { get_place } from "../../../redux/places/action";
+import { set_current_place } from "../../../redux/current/action";
+import { getAllPet } from "../../../redux/pets/action";
 
 export default function UserDashboard() {
-
-  const dispatch = useDispatch()
-  const initialstate = {
-    ord1: 1,
-    ord2: 1,
-    city: "",
-    verified: "",
-    qty: 8,
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  ///setting header///////////////////////////
+  const user = useSelector((state) => state.login);
+  const header = {
+    Authorization: user.token,
   };
-
-  const [queries, setqueries] = React.useState(initialstate);
-  const [page, setpage] = React.useState(1);
-
-  const { ord1, ord2, city, verified, qty} = queries;
-  const initialurl = `http://localhost:5000/pet-place?ord1=${ord1}&ord2=${ord2}&city=${city}&verified=${verified}&qty=${qty}&page=${page}`;
-
-  // const [data, setdata] = React.useState([]);
+  ////////////////////////////////////////////
 
   React.useEffect(() => {
-console.log(initialurl)
-    axios.get(initialurl).then((res)=>{
-      dispatch(get_place(res.data))
-    })
-  }, [queries,page]);
-
-  const handlechange = (e) => {
-
-    let { name, value, type ,title} = e.target;
-    if (name=="ord1" ||name=="ord2" ) {
-      value = parseInt(value);
-      
+    if (!user.isAuthenticated) {
+      navigate("/");
     }
-    setqueries((prev)=>({...prev,[name]:value}))
-  };
+  });
 
+  React.useEffect(() => {
+    dispatch(getAllPet(header));
+  }, []);
+
+  const handledelete=(id)=>{
+
+   
+    axios
+      .delete(`http://localhost:5000/pet/${id}`, {headers:header})
+      .then((res) => {
+        console.log(".then");
+        dispatch(getAllPet(header));
+      })
+      .catch((err) => {
   
+        console.log(".catch");
+        alert("please enter valid credentials");
+      });
 
+  }
+
+  const AllPets = useSelector((state) => state.pets.pets);
   return (
     <div>
-      <div>
-        <input type="text" name="city" value={city} onChange={handlechange} />
-        <div>
-          <label>
-            Pricing
-            <select name="ord1" value={ord1} onChange={handlechange}>
-              <option value={1}>LOW TO HIGH</option>
-              <option value={-1}>HIGH TO LOW</option>
-            </select>
-          </label>
-
-          <label>
-            Ratings
-            <select name="ord2" value={ord2} onChange={handlechange}>
-              <option value={1}>LOW TO HIGH</option>
-              <option value={-1}>HIGH TO LOW</option>
-            </select>
-          </label>
-
-          <label>
-            varification status
-            <select name="verified" value={verified} onChange={handlechange}>
-              <option value="yes">VERIFIED</option>
-              <option value="">SHOW ALL</option>
-              <option value="no">NOT VERIFIED</option>
-            </select>
-          </label>
-        </div>
-      </div>
-      <div id="User_Display"></div>
-
-      <div>
-        <button
-          onClick={() => {
-            setpage((prev) => (prev > 1 ? prev - 1 : 1));
-          }}
-          name="page"
-         disabled={page==1}
-        >
-          prev
-        </button>{" "}
-        <button
-          onClick={() => {
-            setpage((prev) => prev + 1);
-          }}
-          name="page"
-        >
-          next
-        </button>
+      <div id="User_Display">
+        <table>
+          <tbody>
+            <tr>
+              <th>Name</th>
+              <th>breed</th>
+              <th>weight</th>
+              <th>from</th>
+              <th>to</th>
+              <td>Status</td>
+            </tr>
+            {AllPets.map((el) => (
+              <tr key={el._id}>
+                <td>{el.name}</td>
+                <td>{el.breed}</td>
+                <td>{el.weight}</td>
+                <td>{el.from}</td>
+                <td>{el.to}</td>
+                <td>{el.status}</td>
+                <td>
+                  <button disabled={el.status === "Approved"} onClick={()=>{handledelete(el._id)}} >delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

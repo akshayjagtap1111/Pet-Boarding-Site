@@ -8,8 +8,17 @@ export default function UserLogin()  {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const admin = useSelector((state) => state.admin);
-  console.log(admin);
+  const user = useSelector((state) => state.login);
+  console.log(user);
+
+  React.useEffect(()=>{
+    
+    if(user.isAuthenticated){
+      navigate("/")
+    }
+  })
+  
+
   const initialState = {
     username: "",
     password: "",
@@ -26,7 +35,10 @@ export default function UserLogin()  {
   
   const handlesubmit = () => { 
      dispatch(userLogin(logData)) 
+     
   };
+
+ 
 
  
   const { username, password } = logData;

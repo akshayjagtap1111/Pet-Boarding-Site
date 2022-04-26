@@ -1,0 +1,6 @@
+#home_nav{
+    border: solid black 1px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}

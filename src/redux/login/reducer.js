@@ -30,6 +30,7 @@ export const login_reducer = (state = initstate, { type, payload }) => {
         token: "",
         loading: false,
       };
+      
     default:
       return state;
   }

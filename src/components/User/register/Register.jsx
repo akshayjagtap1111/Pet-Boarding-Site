@@ -27,9 +27,26 @@ export default function UserRegister()  {
     setuser((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handlesubmit = () => {
+  const handlesubmit = async () => {
 
-    dispatch(userRegister(user))
+   
+    //  dispatch(userRegister(user))
+
+    axios
+    .post("http://localhost:5000/user/resister", user)
+    .then((res) => {
+      alert("successfully registered...please log in")
+     navigate("/user-login")
+    })
+    .catch((error) => {
+      if (error.response) {
+        alert(error.response.data.message);
+      
+      }
+    });
+   
+ 
+
   };
   const { name,  email, username, password ,phone} = user;
   return (

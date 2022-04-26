@@ -23,6 +23,22 @@ export const get_pet_error = () => {
 };
 
 
+export const AddPet =(petDetails ,header)=>(dispatch)=>{
+
+  axios
+    .post("http://localhost:5000/pet/add",petDetails, {headers:header})
+    .then((res) => {
+      console.log(".then");
+     
+    })
+    .catch((err) => {
+   
+      console.log(".catch");
+      alert("please enter valid credentials");
+    });
+
+}
+
 export const getAllPet =(header)=>(dispatch)=>{
 
     
@@ -77,6 +93,25 @@ export const getAprovedPet =(header)=>(dispatch)=>{
         console.log(".catch");
         alert("please enter valid credentials");
       });
+
+}
+
+export const DeletePet =(header,id)=>(dispatch)=>{
+
+    
+
+  dispatch(get_pet_loading());
+  axios
+    .delete(`http://localhost:5000/pet/${id}`, {headers:header})
+    .then((res) => {
+      console.log(".then");
+
+    })
+    .catch((err) => {
+
+      console.log(".catch");
+      alert("please enter valid credentials");
+    });
 
 }
 
