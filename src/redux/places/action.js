@@ -24,7 +24,7 @@ export const get_place_error = () => {
 
 export const add_Places = (placeDetails, header) => (dispatch) => {
   axios
-    .post("http://localhost:5000/pet-place/add", placeDetails, { headers: header })
+    .post("https://pet-care-boarding.herokuapp.com/pet-place/add", placeDetails, { headers: header })
     .then((res) => {
       console.log(".then");
 

@@ -41,7 +41,7 @@ export const adminRegister =(userDetails)=>(dispatch)=>{
   console.log("dispatching........")
 
   axios
-    .post("http://localhost:5000/user/resister-admin", userDetails)
+    .post("https://pet-care-boarding.herokuapp.com/user/resister-admin", userDetails)
     .then((res) => {
       console.log(".then");
    
@@ -62,7 +62,7 @@ export const adminLogin =(userDetails,nav)=>(dispatch)=>{
 
     dispatch(admin_login_loading());
     axios
-      .post("http://localhost:5000/user/login-admin", userDetails)
+      .post("https://pet-care-boarding.herokuapp.com/user/login-admin", userDetails)
       .then((res) => {
         console.log(".then");
         nav()

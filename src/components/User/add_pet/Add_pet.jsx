@@ -54,7 +54,7 @@ export default function Add_pet() {
 
   const handle_submit = () => {
     axios
-      .post("http://localhost:5000/pet/add", pet, { headers: header })
+      .post("https://pet-care-boarding.herokuapp.com/pet/add", pet, { headers: header })
       .then((res) => {
         console.log(".then");
         navigate("/user-dashboard");

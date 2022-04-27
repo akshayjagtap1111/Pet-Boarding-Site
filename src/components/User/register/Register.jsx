@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import {useDispatch,useSelector} from "react-redux"
 import "./Register.css";
 import { userRegister } from "../../../redux/login/action";
+import Home_nav from "../../home/Home_nav";
 
 export default function UserRegister()  {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ export default function UserRegister()  {
     //  dispatch(userRegister(user))
 
     axios
-    .post("http://localhost:5000/user/resister", user)
+    .post("https://pet-care-boarding.herokuapp.com/user/resister", user)
     .then((res) => {
       alert("successfully registered...please log in")
      navigate("/user-login")
@@ -49,51 +50,108 @@ export default function UserRegister()  {
 
   };
   const { name,  email, username, password ,phone} = user;
-  return (
-    <div id="login_cover">
+  return (<>
+  <Home_nav/>
+    <div id="register_cover">
+      
       <h1>REGISTER</h1>
-      <input
-        type="text"
-        placeholder="Enter name"
-        value={name}
-        name="name"
-        onChange={handlechange}
-      />
+
+      <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon3">
+              {" "}
+              Breed
+            </span>
+            <input
+              className="form-control"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              type="text"
+              placeholder="Enter name"
+              value={name}
+              name="name"
+              onChange={handlechange}
+            />
+          </div>
+   
       <br />
      
-      <input
-        type="text"
+      <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon3">
+              {" "}
+              Breed
+            </span>
+            <input
+              className="form-control"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              type="text"
         placeholder="Enter email"
         value={email}
         name="email"
         onChange={handlechange}
-      />
+            />
+          </div>
+
+  
       <br />
-      <input
-        type="text"
+      <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon3">
+              {" "}
+              Breed
+            </span>
+            <input
+              className="form-control"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              type="text"
         placeholder="Enter username"
         value={username}
         name="username"
         onChange={handlechange}
-      />
+            />
+          </div>
+
+     
       <br />
-      <input
-        type="text"
+
+      <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon3">
+              {" "}
+              Breed
+            </span>
+            <input
+              className="form-control"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              type="text"
         placeholder="Enter password"
         value={password}
         name="password"
         onChange={handlechange}
-      />
+            />
+          </div>
+     
       <br />
-      <input
-        type="text"
+
+      <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon3">
+              {" "}
+              Breed
+            </span>
+            <input
+              className="form-control"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              type="text"
         placeholder="Enter Phone"
         value={phone}
         name="phone"
         onChange={handlechange}
-      />
+            />
+          </div>
+     
       <br />
-      <button onClick={handlesubmit}>REGISTER</button>
+      <button className="btn btn-primary" onClick={handlesubmit}>REGISTER</button>
     </div>
-  );
+    </> );
 }

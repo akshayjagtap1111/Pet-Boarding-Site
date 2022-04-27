@@ -14,22 +14,19 @@ import Home from "./components/home/Home";
 function App() {
   return (
     <div className="App">
-      <div id="tempNav">
-      
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
 
-          <Route path="/admin-dashboard" element={<AdminDashboard />}></Route>
-          <Route path="/admin-login" element={<Login />}></Route>
-          <Route path="/admin-register" element={<Register />}></Route>
-          <Route path="/Add-place" element={<Add_place />}></Route>
+        <Route path="/admin-dashboard" element={<AdminDashboard />}></Route>
+        <Route path="/admin-login" element={<Login />}></Route>
+        <Route path="/admin-register" element={<Register />}></Route>
+        <Route path="/Add-place" element={<Add_place />}></Route>
 
-          <Route path="/user-dashboard" element={<UserDashboard />}></Route>
-          <Route path="/user-login" element={<UserLogin />}></Route>
-          <Route path="/user-register" element={<UserRegister />}></Route>
-          <Route path="/Add-pet" element={<Add_pet />}></Route>
-        </Routes>
-      </div>
+        <Route path="/user-dashboard" element={<UserDashboard />}></Route>
+        <Route path="/user-login" element={<UserLogin />}></Route>
+        <Route path="/user-register" element={<UserRegister />}></Route>
+        <Route path="/Add-pet" element={<Add_pet />}></Route>
+      </Routes>
     </div>
   );
 }

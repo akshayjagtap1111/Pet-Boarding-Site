@@ -26,7 +26,7 @@ export const get_pet_error = () => {
 export const AddPet =(petDetails ,header)=>(dispatch)=>{
 
   axios
-    .post("http://localhost:5000/pet/add",petDetails, {headers:header})
+    .post("https://pet-care-boarding.herokuapp.com/pet/add",petDetails, {headers:header})
     .then((res) => {
       console.log(".then");
      
@@ -45,7 +45,7 @@ export const getAllPet =(header)=>(dispatch)=>{
 
     dispatch(get_pet_loading());
     axios
-      .get("http://localhost:5000/pet/all", {headers:header})
+      .get("https://pet-care-boarding.herokuapp.com/pet/all", {headers:header})
       .then((res) => {
         console.log(".then");
         dispatch(get_pet(res.data));
@@ -64,7 +64,7 @@ export const getPendingPet =(header)=>(dispatch)=>{
 
     dispatch(get_pet_loading());
     axios
-      .get("http://localhost:5000/pet/pending", {headers:header})
+      .get("https://pet-care-boarding.herokuapp.com/pet/pending", {headers:header})
       .then((res) => {
         console.log(".then");
         dispatch(get_pet(res.data));
@@ -83,7 +83,7 @@ export const getAprovedPet =(header)=>(dispatch)=>{
 
     dispatch(get_pet_loading());
     axios
-      .get("http://localhost:5000/pet/approved", {headers:header})
+      .get("https://pet-care-boarding.herokuapp.com/pet/approved", {headers:header})
       .then((res) => {
         console.log(".then");
         dispatch(get_pet(res.data));
@@ -102,7 +102,7 @@ export const DeletePet =(header,id)=>(dispatch)=>{
 
   dispatch(get_pet_loading());
   axios
-    .delete(`http://localhost:5000/pet/${id}`, {headers:header})
+    .delete(`https://pet-care-boarding.herokuapp.com/pet/${id}`, {headers:header})
     .then((res) => {
       console.log(".then");
 

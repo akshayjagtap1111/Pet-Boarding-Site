@@ -33,7 +33,7 @@ export const userLogin = (userDetails) => (dispatch) => {
 
   dispatch(login_loading());
   axios
-    .post("http://localhost:5000/user/login", userDetails)
+    .post("https://pet-care-boarding.herokuapp.com/user/login", userDetails)
     .then((res) => {
       console.log(".then");
       dispatch(login_success(res.data.token));
@@ -52,7 +52,7 @@ export const userRegister = (userDetails) => (dispatch) => {
   console.log("dispatching........user");
 
   axios
-    .post("http://localhost:5000/user/resister", userDetails)
+    .post("https://pet-care-boarding.herokuapp.com/user/resister", userDetails)
     .then((res) => {
       return true
     })

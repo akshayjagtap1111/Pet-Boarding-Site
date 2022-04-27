@@ -32,7 +32,7 @@ export default function UserDashboard() {
 
   const handledelete = (id) => {
     axios
-      .delete(`http://localhost:5000/pet/${id}`, { headers: header })
+      .delete(`https://pet-care-boarding.herokuapp.com/pet/${id}`, { headers: header })
       .then((res) => {
         console.log(".then");
         dispatch(getAllPet(header));
@@ -49,7 +49,7 @@ export default function UserDashboard() {
       <Home_nav />
       <div id="User_Display">
         <table className="table table-bordered" style={{
-              color: "white",
+              color: "lightgray",
               verticalAlign: "top",
               
             }}>
@@ -69,11 +69,12 @@ export default function UserDashboard() {
                 <td>{el.weight}</td>
                 <td>{el.from}</td>
                 <td>{el.to}</td>
-                <td>{el.status}</td>
+                <td style={el.status === "Approved"?{color:"lightgreen"}:{color:"yellow"}}>{el.status}</td>
                 <td>
                   <button
-                   
+                   className="btn btn-secondary"
                     disabled={el.status === "Approved"}
+                    style={el.status === "Approved"?{color:"lightgray"}:{color:"red"}}
                     onClick={() => {
                       handledelete(el._id);
                     }}

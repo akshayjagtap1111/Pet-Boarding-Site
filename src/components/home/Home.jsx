@@ -58,7 +58,7 @@ export default function Home() {
   const [page, setpage] = React.useState(1);
 
   const { ord1, ord2, city, verified, qty } = queries;
-  const initialurl = `http://localhost:5000/pet-place?ord1=${ord1}&ord2=${ord2}&city=${city}&verified=${verified}&qty=${qty}&page=${page}`;
+  const initialurl = `https://pet-care-boarding.herokuapp.com/pet-place?ord1=${ord1}&ord2=${ord2}&city=${city}&verified=${verified}&qty=${qty}&page=${page}`;
 
   // const [data, setdata] = React.useState([]);
 
@@ -98,8 +98,10 @@ export default function Home() {
     navigate("/add-pet");
   };
   return (
+    <>
+    <Home_nav />
     <div id="container">
-      <Home_nav />
+      
       <div className="d-flex align-items-center" id="home_flex_cover">
         <div className="flex-shrink-0">
           <hr />
@@ -168,7 +170,7 @@ export default function Home() {
           <table
             className="table"
             style={{
-              color: "white",
+              color: "lightgray",
               verticalAlign: "top",
               
             }}
@@ -239,5 +241,5 @@ export default function Home() {
       </div>
       <p id="to_admin"><Link to="/admin-login">@ Workspace admin</Link></p>
     </div>
-  );
+    </>);
 }
