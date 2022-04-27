@@ -1,8 +1,8 @@
 const { SET_CURRENT_PET, SET_CURRENT_PLACE } = require("./action")
 
 const initState = {
-    current_pet:"",
-    current_place:""
+    current_pet:{},
+    current_place:{}
 }
 
 export const current_reducer=(state=initState,{type,payload})=>{

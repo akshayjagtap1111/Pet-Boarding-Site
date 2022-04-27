@@ -34,7 +34,7 @@ export const AddPet =(petDetails ,header)=>(dispatch)=>{
     .catch((err) => {
    
       console.log(".catch");
-      alert("please enter valid credentials");
+      // alert("please enter valid credentials");
     });
 
 }
@@ -53,7 +53,7 @@ export const getAllPet =(header)=>(dispatch)=>{
       .catch((err) => {
         dispatch(get_pet_error());
         console.log(".catch");
-        alert("please enter valid credentials");
+        // alert("please enter valid credentials");
       });
 
 }

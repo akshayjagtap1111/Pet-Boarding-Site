@@ -15,8 +15,7 @@ function App() {
   return (
     <div className="App">
       <div id="tempNav">
-        <Link to="/"> Navbar</Link>
-        
+      
         <Routes>
           <Route path="/" element={<Home />}></Route>
 

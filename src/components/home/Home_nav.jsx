@@ -8,7 +8,7 @@ function Log() {
   return (
     <div>
       <Link to="/user-login">
-        <button>Login</button>
+        <button  className="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">Login</button>
       </Link>
     </div>
   );
@@ -22,7 +22,7 @@ function Logout() {
         dispatch(login_failure())
     }
   return <div>
-      <button onClick={handleLogout}>Logout</button>
+      <button  className="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true" onClick={handleLogout}>Logout</button>
 
   </div>;
 }
@@ -35,7 +35,9 @@ export default function () {
 
   return <div id="home_nav">
 
-      <button onClick={()=>{navigate("/")}}>home</button>
+<div><button  className="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true" onClick={()=>{navigate("/")}}>home</button></div>
+<div id="Dashboard_btn"><button  className="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true" onClick={()=>{navigate("/user-dashboard")}}>Dashboard</button></div>
+      
       {user.isAuthenticated ?<Logout /> :<Log/> }
       
       </div>;

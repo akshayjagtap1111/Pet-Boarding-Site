@@ -1,0 +1,11 @@
+#add_pet_cover{
+    padding: 20px;
+    width: 95%;
+    margin: auto;
+    gap: 100px;
+    align-items: flex-start !important;
+}
+#add_pet_date{
+    display: flex;
+    gap: 30px;
+}

@@ -56,7 +56,7 @@ export const adminRegister =(userDetails)=>(dispatch)=>{
 
 
 
-export const adminLogin =(userDetails)=>(dispatch)=>{
+export const adminLogin =(userDetails,nav)=>(dispatch)=>{
 
     console.log(userDetails)
 
@@ -65,6 +65,7 @@ export const adminLogin =(userDetails)=>(dispatch)=>{
       .post("http://localhost:5000/user/login-admin", userDetails)
       .then((res) => {
         console.log(".then");
+        nav()
         dispatch(admin_login_success(res.data.token));
       })
       .catch((err) => {

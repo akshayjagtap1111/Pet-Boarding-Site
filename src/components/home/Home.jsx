@@ -4,9 +4,7 @@
 // import {Link} from "react-router-dom"
 // import Home_nav from "./Home_nav";
 
-
 // export default function Home() {
-
 
 //   return <div id="home_display">
 //     <Home_nav/>
@@ -20,16 +18,14 @@
 // Don'n have account... click here....
 // </Link>
 
-
 //   </div>;
 // }
 
-
 import React from "react";
 import axios from "axios";
-import "./Home.css"
+import "./Home.css";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { get_place } from "../../redux/places/action";
 import { set_current_place } from "../../redux/current/action";
 import Home_nav from "./Home_nav";
@@ -55,7 +51,7 @@ export default function Home() {
     ord2: "",
     city: "",
     verified: "",
-    qty: 5,
+    qty: 6,
   };
 
   const [queries, setqueries] = React.useState(initialstate);
@@ -95,79 +91,130 @@ export default function Home() {
     }
   }
 
-  const handleNavToPlace = () => {
-
-  };
+  const handleNavToPlace = () => {};
 
   const handleNavToAddPet = (el) => {
-   
-    dispatch(set_current_place(el._id))
+    dispatch(set_current_place(el));
     navigate("/add-pet");
   };
   return (
-    <div>
-       <Home_nav/>
-      <div>
-        <input type="text" name="city" value={city} onChange={handlechange} />
-        <div>
-          <label>
-            Pricing
-            <select name="ord1" value={ord1} onChange={handlechange}>
-              <option value={1}>LOW TO HIGH</option>
-              <option value={-1}>HIGH TO LOW</option>
-            </select>
-          </label>
+    <div id="container">
+      <Home_nav />
+      <div className="d-flex align-items-center" id="home_flex_cover">
+        <div className="flex-shrink-0">
+          <hr />
+          <p className="filter_head">FILTER BY</p>
+          <input
+            type="text"
+            name="city"
+            value={city}
+            onChange={handlechange}
+            placeholder="Search City"
+          />
+          <div id="home_sorting_view">
+            <label>
+              PRICING
+              <select
+                id="sel-back"
+                className="form-select"
+                size="3"
+                aria-label="size 3 select example"
+                name="ord1"
+                value={ord1}
+                onChange={handlechange}
+              >
+                <option value={1}>LOW TO HIGH</option>
+                <option value={-1}>HIGH TO LOW</option>
+                <option value="">NONE</option>
+              </select>
+            </label>
 
-          <label>
-            Ratings
-            <select name="ord2" value={ord2} onChange={handlechange}>
-              <option value={1}>LOW TO HIGH</option>
-              <option value={-1}>HIGH TO LOW</option>
-            </select>
-          </label>
+            <label>
+              RATINGS
+              <select
+                id="sel-back"
+                className="form-select"
+                size="3"
+                aria-label="size 3 select example"
+                name="ord2"
+                value={ord2}
+                onChange={handlechange}
+              >
+                <option value={1}>LOW TO HIGH</option>
+                <option value={-1}>HIGH TO LOW</option>
+                <option value="">NONE</option>
+              </select>
+            </label>
 
-          <label>
-            varification status
-            <select name="verified" value={verified} onChange={handlechange}>
-              <option value="yes">VERIFIED</option>
-              <option value="">SHOW ALL</option>
-              <option value="no">NOT VERIFIED</option>
-            </select>
-          </label>
+            <label>
+              VARIFICATION
+              <select
+                id="sel-back"
+                className="form-select"
+                size="3"
+                aria-label="size 3 select example"
+                name="verified"
+                value={verified}
+                onChange={handlechange}
+              >
+                <option value="yes">VERIFIED</option>
+                <option value="">SHOW ALL</option>
+                <option value="no">NOT VERIFIED</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div id="User_Display" className="table-responsive flex-grow-1 ms-3">
+          <table
+            className="table"
+            style={{
+              color: "white",
+              verticalAlign: "top",
+              
+            }}
+          >
+            <tbody>
+              <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Capacity</th>
+                <th>Cost Per Day</th>
+                <th>Verified</th>
+                <th>Ratings</th>
+                <th>Action</th>
+              </tr>
+              {places_data.map((el) => (
+                <tr key={el._id}>
+                  <td onClick={handleNavToPlace}>{el.name}</td>
+                  <td>{el.city}</td>
+                  <td>{el.address}</td>
+                  <td>{el.capacity}</td>
+                  <td>{el.cost_per_day}</td>
+                  <td>{el.verified}</td>
+                  <td>{el.rating}</td>
+                  <td>
+                    <button
+                      className="btn btn-secondary"
+                      onClick={() => {
+                        handleNavToAddPet(el);
+                      }}
+                    >
+                      book
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
-      <div id="User_Display">
-        <table>
-          <tbody>
-            <tr>
-              <th>Name</th>
-              <th>City</th>
-              <th>Address</th>
-              <th>Capacity</th>
-              <th>Cost Per Day</th>
-              <th>Verified</th>
-              <th>Ratings</th>
-            </tr>
-            {places_data.map((el) => (
-              <tr key={el._id}>
-                <td onClick={handleNavToPlace}>{el.name}</td>
-                <td>{el.city}</td>
-                <td>{el.address}</td>
-                <td>{el.capacity}</td>
-                <td>{el.cost_per_day}</td>
-                <td>{el.verified}</td>
-                <td>{el.rating}</td>
-                <td>
-                  <button onClick={()=>{handleNavToAddPet(el)}}>book</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <div>
+      <div id="home_bottom">
         <button
+          className="btn btn-primary active"
+          data-bs-toggle="button"
+          autocomplete="off"
+          aria-pressed="true"
           onClick={() => {
             setpage((prev) => (prev > 1 ? prev - 1 : 1));
           }}
@@ -177,6 +224,10 @@ export default function Home() {
           prev
         </button>{" "}
         <button
+          className="btn btn-primary active"
+          data-bs-toggle="button"
+          autocomplete="off"
+          aria-pressed="true"
           onClick={() => {
             setpage((prev) => prev + 1);
           }}
@@ -186,7 +237,7 @@ export default function Home() {
           next
         </button>
       </div>
+      <p id="to_admin"><Link to="/admin-login">@ Workspace admin</Link></p>
     </div>
   );
 }
-
