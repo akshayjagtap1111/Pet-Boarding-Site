@@ -2,12 +2,13 @@ import React from "react";
 import "./Admin_nav.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login_failure } from "../../../redux/login/action";
+
+import { admin_login_failure } from "../../../redux/admin_log/action";
 
 function Log() {
   return (
     <div>
-      <Link to="/user-login">
+      <Link to="/admin-login">
         <button
           className="btn btn-primary active"
           data-bs-toggle="button"
@@ -25,7 +26,7 @@ function Logout() {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(login_failure());
+    dispatch(admin_login_failure());
   };
   return (
     <div>
@@ -45,8 +46,8 @@ function Logout() {
 export default function () {
   const navigate = useNavigate();
 
-  const user = useSelector((state) => state.login);
-  console.log(user);
+  const admin = useSelector((state) => state.admin);
+  // console.log(admin);
 
   return (
     <div id="home_nav">
@@ -73,11 +74,11 @@ export default function () {
             navigate("/admin-dashboard");
           }}
         >
-         Admin Dashboard
+          Admin Dashboard
         </button>
       </div>
 
-      {user.isAuthenticated ? <Logout /> : <Log />}
+      {admin.isAuthenticated ? <Logout /> : <Log />}
     </div>
   );
 }

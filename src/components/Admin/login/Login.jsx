@@ -53,7 +53,7 @@ export default function Login() {
     <span className="input-group-text" id="basic-addon3"> Password</span>
     <input  className="form-control" id="basic-url" aria-describedby="basic-addon3"
       
-       type="text"
+       type="password"
        placeholder="enter password"
        name="password"
        value={password}

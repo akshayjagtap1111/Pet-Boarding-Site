@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import {useDispatch,useSelector} from "react-redux"
 import "./Register.css";
 import { adminRegister } from "../../../redux/admin_log/action"
+import Admin_nav from "../admin_nav/Admin_nav";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -31,51 +32,110 @@ export default function Register() {
     dispatch(adminRegister(admin))
   };
   const { name,  email, username, password ,phone} = admin;
-  return (
-    <div id="login_cover">
+  return (<>
+  <Admin_nav/>
+    <div id="register_cover">
       <h1>REGISTER</h1>
-      <input
-        type="text"
-        placeholder="Enter name"
-        value={name}
-        name="name"
-        onChange={handlechange}
-      />
-      <br />
+
+      <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon3">
+              {" "}
+             Name
+            </span>
+            <input
+              className="form-control"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              type="text"
+              placeholder="Enter name"
+              value={name}
+              name="name"
+              onChange={handlechange}
+            />
+          </div>
+
      
-      <input
-        type="text"
-        placeholder="Enter email"
-        value={email}
-        name="email"
-        onChange={handlechange}
-      />
       <br />
-      <input
-        type="text"
+
+
+      <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon3">
+              {" "}
+              Email
+            </span>
+            <input
+              className="form-control"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              type="text"
+              placeholder="Enter email"
+              value={email}
+              name="email"
+              onChange={handlechange}
+            />
+          </div>
+     
+     
+      <br />
+
+      <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon3">
+              {" "}
+             Username
+            </span>
+            <input
+              className="form-control"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              type="text"
         placeholder="Enter username"
         value={username}
         name="username"
         onChange={handlechange}
-      />
+            />
+          </div>
+
+     
       <br />
-      <input
-        type="text"
+
+      <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon3">
+              {" "}
+             Password
+            </span>
+            <input
+              className="form-control"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              type="password"
         placeholder="Enter password"
         value={password}
         name="password"
         onChange={handlechange}
-      />
+            />
+          </div>
+
+      
       <br />
-      <input
-        type="text"
+      <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon3">
+              {" "}
+              Phone
+            </span>
+            <input
+              className="form-control"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              type="text"
         placeholder="Enter Phone"
         value={phone}
         name="phone"
         onChange={handlechange}
-      />
+            />
+          </div>
+      
       <br />
-      <button onClick={handlesubmit}>REGISTER</button>
+      <button className="btn btn-primary" onClick={handlesubmit}>REGISTER</button>
     </div>
-  );
+    </> );
 }

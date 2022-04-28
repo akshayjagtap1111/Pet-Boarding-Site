@@ -21,7 +21,7 @@ export default function AdminDashboard() {
   React.useEffect(() => {
     if (!admin.isAuthenticated) {
       alert("Please log in.....");
-      navigate("/");
+      navigate("/admin-login");
     }
   });
 
