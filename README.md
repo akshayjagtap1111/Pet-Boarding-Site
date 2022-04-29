@@ -33,7 +33,7 @@ npm run server
 
 View in Browser
 ```
-go to https://rishabhtg209.github.io/NINE_WEST/
+go to https://pet-care-xi.vercel.app/
 ```
 
 ## Technologies we used
