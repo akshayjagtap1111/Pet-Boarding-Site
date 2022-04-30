@@ -74,11 +74,11 @@ export default function Add_pet() {
         id="add_pet_cover"
         className="d-flex align-items-center"
         style={{
-          color: "white",
           textAlign: "left",
+          
         }}
       >
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0" >
           <h2>Reserve space for your pet in</h2>
           <h3>{currentPlace.name}</h3>
           <p>City : {currentPlace.city}</p>

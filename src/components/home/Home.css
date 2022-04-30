@@ -7,37 +7,38 @@
   width: 95%;
   min-height: 720px;
   margin: auto;
-  background-color: rgb(52, 56, 108);
-  color: lightgray !important;
+  
+  /* background-color: rgb(52, 56, 108); */
+  /* color: lightgray !important; */
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-image: linear-gradient(180deg, rgb(20, 15, 55), rgb(47, 67, 100));
+  /* background-image: linear-gradient(180deg, rgb(177, 168, 234), rgb(112, 136, 175)); */
 }
 #home_flex_cover{
   align-items: flex-start !important;
-  min-height: 410px;
+  min-height: 510px;
+  background-image: url("https://thumbs.dreamstime.com/z/dog-cat-side-white-web-banner-cute-closeup-peeking-out-horizontal-159567181.jpg");
 }
+
 body {
   /* background-color: rgb(149, 155, 230); */
-  background-image: linear-gradient(180deg, rgb(20, 15, 55), rgb(47, 67, 100));
+  /* background-image: linear-gradient(180deg, rgb(20, 15, 55), rgb(47, 67, 100)); */
 }
 .filter_head {
   padding: 0px;
   margin: 0px;
  
 }
-hr{
-    border: solid lightgray 5px;
-}
+
 
 #User_Display {
-  border: solid #a8a8ef 1px;
+  /* border: solid #a8a8ef 1px; */
   margin-top: 19px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   
 }
 #home_bottom {
-  margin-top: 20px;
-  border: solid #0c0c35 1px;
+  margin-top: 10px;
+  /* border: solid #0c0c35 1px; */
 }
 #home_bottom button{
   margin: 0 10px 0 10px;
@@ -46,8 +47,8 @@ hr{
   width: 50px;
 }
 #sel-back {
-  background-color: rgb(47, 67, 100);
-  color: gray;
+  /* background-color: rgb(47, 67, 100); */
+  /* color: gray; */
 }
 
 
@@ -55,4 +56,24 @@ hr{
   position: fixed;
   right: 10px;
   bottom: 10px;
+}
+
+#dummy{
+  border: solid red 1px;
+  height: 50px;
+  width: 80%;
+  margin: auto;
+}
+
+#giff{
+
+  /* border: solid red 1px; */
+  height: 100px;
+  margin-top: 10px;
+
+}
+
+#giff img{
+  width: 60%;
+  height: 100%;
 }

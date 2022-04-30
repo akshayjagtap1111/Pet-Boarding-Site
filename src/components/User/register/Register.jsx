@@ -46,6 +46,7 @@ export default function UserRegister() {
   return (
     <>
       <Home_nav />
+      <div id="reg_outer">
       <div id="register_cover">
         <h1>REGISTER</h1>
 
@@ -145,6 +146,7 @@ export default function UserRegister() {
         <button className="btn btn-primary" onClick={handlesubmit}>
           REGISTER
         </button>
+      </div>
       </div>
     </>
   );

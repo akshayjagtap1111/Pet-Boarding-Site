@@ -10,13 +10,15 @@ import Login from "./components/Admin/login/Login";
 import Register from "./components/Admin/register/Register";
 import Add_place from "./components/Admin/add_place/Add_place";
 import Home from "./components/home/Home";
+import Welcome from "./components/welcome_page/Welcome";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-
+        <Route path="/" element={<Welcome/>}></Route>
+       
+        <Route path="/home" element={<Home />}></Route>
         <Route path="/admin-dashboard" element={<AdminDashboard />}></Route>
         <Route path="/admin-login" element={<Login />}></Route>
         <Route path="/admin-register" element={<Register />}></Route>

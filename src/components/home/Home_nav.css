@@ -1,7 +1,29 @@
 #home_nav{
     border: solid black 1px;
-    background-color:rgb(44, 44, 77);
     display: flex;
-    justify-content: space-between;
+    justify-content:space-evenly;
+   height: 80px;
     padding: 20px;
+}
+
+
+
+#home_nav div{
+    display: flex;
+    justify-content: flex-end !important;
+    gap: 5%;
+}
+
+#u_dashboard_sub{
+    /* border: solid red 1px; */
+    height: 260px;
+width: 100%;
+    margin: auto;
+    background-image: url("https://media.istockphoto.com/vectors/animal-paw-prints-on-blue-winter-background-vector-id1064117208?k=20&m=1064117208&s=612x612&w=0&h=BNXIDYyIrOmrWt5PJCXMohcSrYxHDjSo3WfGBJ-lZzI=");
+    background-repeat: no-repeat;
+    background-size: cover;
+text-align: center;
+display: flex;
+justify-content: center;
+flex-direction: column;
 }

@@ -2,4 +2,12 @@
     width: 50%;
     margin: auto;
     color: aliceblue;
+    background-color: whitesmoke;
+}
+#reg_outer{
+    width: 80%;
+    margin: auto;
+    background-image: url("https://thumbs.dreamstime.com/z/cat-dog-banner-16533511.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -51,6 +51,12 @@ export default function () {
 
   return (
     <div id="home_nav">
+        <div>
+      <img src="https://m.media-amazon.com/images/I/61TQ4qebeBL._AC_SS450_.jpg" style={{width:"40px", height:"40px"}}/>
+    </div>
+
+      <div>
+  
       <div>
         <button
           className="btn btn-primary active"
@@ -74,11 +80,12 @@ export default function () {
             navigate("/admin-dashboard");
           }}
         >
-          Admin Dashboard
+          Admin
         </button>
       </div>
 
       {admin.isAuthenticated ? <Logout /> : <Log />}
+    </div>
     </div>
   );
 }

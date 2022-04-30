@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { userLogin} from "../../../redux/login/action";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import Home_nav from "../../home/Home_nav";
+
 import "./Login.css"
 
 export default function UserLogin()  {
@@ -16,7 +17,7 @@ export default function UserLogin()  {
   React.useEffect(()=>{
     
     if(user.isAuthenticated){
-      navigate("/")
+      navigate("/home")
     }
   })
   
@@ -47,6 +48,7 @@ export default function UserLogin()  {
   return (
     <div>
       <Home_nav/>
+      <div id="login_outer">
 <div id="login_box">
   <div className="input-group mb-3">
     <span className="input-group-text" id="basic-addon3"> username</span>
@@ -79,11 +81,14 @@ export default function UserLogin()  {
            
       <br></br>
       <br />
-
+<div id="log-reg-links">
     <Link to="/user-register"> Dont have account...? create One</Link>
 
     <br />
+   
     <Link to="/admin-login">@ Workspace Admin</Link>
+    </div>
+</div>
 </div>
 
     </div>

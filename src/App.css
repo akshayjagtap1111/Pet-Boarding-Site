@@ -1,23 +1,34 @@
 .App {
   text-align: center;
+ 
 }
 
 
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: white; */
 }
 
 #container{
   width: 95%;
   margin: auto;
 
+}
+
+.App> Video{
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
 }
 

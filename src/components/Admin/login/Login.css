@@ -1,0 +1,19 @@
+#login_box{
+    /* border:  solid red 1px; */
+    height: 500px;
+    width: 40%;
+    margin: auto;
+    padding-top: 50px;
+  background-color: whitesmoke;
+}
+#login_outer{
+    width: 80%;
+    margin: auto;
+    background-image: url("https://thumbs.dreamstime.com/z/cat-dog-banner-16533511.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#log_reg_links{
+    position: relative;
+    top: 180px;
+}

@@ -21,7 +21,7 @@ export default function UserDashboard() {
   React.useEffect(() => {
     if (!user.isAuthenticated) {
       alert("you have not logged in")
-      navigate("/");
+      navigate("/home");
       
     }
   });
@@ -47,9 +47,19 @@ export default function UserDashboard() {
   return (
     <div>
       <Home_nav />
+      <div id="u_dashboard_img">
+    
+      <div id="u_dashboard_sub">
+        <h3 >
+        “Pets are humanizing. They remind us we have
+         an obligation and responsibility to preserve 
+         and nurture and care for all life.”
+        </h3>
+      </div>
+      </div>
       <div id="User_Display">
         <table className="table table-bordered" style={{
-              color: "lightgray",
+            
               verticalAlign: "top",
               
             }}>
@@ -69,7 +79,7 @@ export default function UserDashboard() {
                 <td>{el.weight}</td>
                 <td>{el.from}</td>
                 <td>{el.to}</td>
-                <td style={el.status === "Approved"?{color:"lightgreen"}:{color:"yellow"}}>{el.status}</td>
+                <td style={el.status === "Approved"?{color:"green"}:{color:"orange"}}>{el.status}</td>
                 <td>
                   <button
                    className="btn btn-secondary"

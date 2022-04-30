@@ -2,6 +2,24 @@
     border: solid black 1px;
     background-color:rgb(44, 44, 77);
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
+    gap: 2%;
+    padding: 20px;
+    height: 80px;
+}
+
+#home_nav{
+    border: solid black 1px;
+    display: flex;
+    /* justify-content:space-evenly; */
+   
     padding: 20px;
 }
+
+
+
+/* #home_nav div{
+    display: flex;
+    justify-content: flex-end !important;
+    gap: 5%;
+} */

@@ -35,10 +35,18 @@ export default function () {
 
   return <div id="home_nav">
 
-<div><button  className="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true" onClick={()=>{navigate("/")}}>home</button></div>
-<div id="Dashboard_btn"><button  className="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true" onClick={()=>{navigate("/user-dashboard")}}>Dashboard</button></div>
+    <div>
+      <img src="https://m.media-amazon.com/images/I/61TQ4qebeBL._AC_SS450_.jpg" style={{width:"40px", height:"40px"}}/>
+    </div>
+
+    <div>
+    <div><button  className="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true" onClick={()=>{navigate("/home")}}>Explore</button></div>
+<div id="Dashboard_btn"><button  className="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true" onClick={()=>{navigate("/user-dashboard")}}>Bookings</button></div>
       
       {user.isAuthenticated ?<Logout /> :<Log/> }
+    </div>
+
+
       
       </div>;
 }

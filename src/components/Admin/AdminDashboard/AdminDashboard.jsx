@@ -67,8 +67,9 @@ export default function AdminDashboard() {
         <table
           className="table table-bordered"
           style={{
-            color: "lightgray",
             verticalAlign: "top",
+            fontSize:" 17px",
+            fontFamily: 'Arvo, serif'
           }}
         >
           <tbody>
@@ -101,7 +102,7 @@ export default function AdminDashboard() {
                   {el.status === "Approved" ? (
                     <button
                       className="btn btn-secondary" id="admin_btn"
-                      disabled={el.status === "Approved"}
+                   
                       style={
                         el.status === "Approved"
                           ? { color: "lightgray" }

@@ -1,1 +1,28 @@
+#u_dashboard_img{
+    z-index: -20;
+    height: 350px;
+    background-image: url("https://thumbs.dreamstime.com/z/dogs-cats-peeking-over-web-banner-row-tops-heads-paws-up-blank-white-sign-sized-social-media-cover-111520621.jpg");
+   background-repeat: no-repeat;
+    background-size: cover;
+}
 
+#u_dashboard_sub{
+    /* border: solid red 1px; */
+    height: 160px;
+    width: 80%;
+    margin: auto;
+    background-image: url("https://media.istockphoto.com/vectors/animal-paw-prints-on-blue-winter-background-vector-id1064117208?k=20&m=1064117208&s=612x612&w=0&h=BNXIDYyIrOmrWt5PJCXMohcSrYxHDjSo3WfGBJ-lZzI=");
+    background-repeat: no-repeat;
+    background-size: cover;
+text-align: center;
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+
+#u_dashboard_sub h3{
+    font-family: 'Arvo', serif;
+    font-family: 'Lobster', cursive;
+    color: dodgerblue;
+    
+}

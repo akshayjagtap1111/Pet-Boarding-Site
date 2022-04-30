@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar{
+    display: flex;
+    width: 100%;
+    height: 200px;
+}
+#icons{
+    margin-left: 100px;
+    margin-top: 60px;
+    display: flex;
+    width: 500px;
+    height: 50px;
+    
+}
+#colo{
+    color: white;
+    margin-left: 40px;
+}
+.logo{
+    width: 250px;
+    height: 110px;
+    margin-left: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.location{
+    font-size: 25px;
+    height: 50px;
+    padding: 10px;
+    background-color: rgb(56, 7, 101);
+    color: white;
+    margin-left: 50px;
+    cursor: pointer;
+        margin-top: 40px;
+   
+}
+.sign{
+       padding: 10px;
+    margin-left: 200px;
+    color: white;
+     font-size: 25px;
+     cursor: pointer;
+     margin-top: 40px;
+ 
+}
+#info{
+    width: 100%;
+    height: 2000px;
+    margin-top: 550px;
+}
+#flex{
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+    justify-content: space-evenly;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.lh{
+    width: 40%;
+    
+}
+h2{
+    padding-left: 70px;
+    color: rgb(255,204,66);
+    padding-top: 10px;
+}
+h1{
+    padding-left: 70px;
+    font-size: 40px;
+    font-weight: 600;
+    color: rgb(91,103,112);
+       padding-top: 10px;
+}
+p{
+    padding-left: 70px;
+       padding-top: 10px;
+       font-size: 18px;
+       color: rgb(91,103,112);
+       line-height: 25px;
+       
+}
+.rh{
+    width: 40%;
+}
+.im{
+    width: 100%;
+    margin-top: 50px;
+}
